@@ -28,4 +28,19 @@ async function testPostUserRequest() {
 (async () => {
   await testPostUniversityRequest();
   await testPostUserRequest()
-})()
+})
+
+async function testPostSubjectRequest() {
+  try {
+    const response = await axios.post('http://localhost:3000/subject', {
+      name: 'Math 101',
+      description: 'Basic Mathematics',
+      userId: 1,
+    });
+    console.log('Subject created:', response.data);
+  } catch (error) {
+    console.error('Error:', error.response ? error.response.data : error.message);
+  }
+}
+
+testPostUserRequest();

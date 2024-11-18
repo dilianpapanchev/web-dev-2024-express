@@ -10,6 +10,9 @@ interface UserAttributes {
 interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
 
 export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+  addSubjects(subjectIds: any) {
+    throw new Error('Method not implemented.');
+  }
   public id!: number;
   public name!: string;
   public universityId!: number;
